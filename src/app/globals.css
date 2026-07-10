@@ -214,3 +214,127 @@ body {
   background: rgba(92, 122, 134, 0.35);
   border-radius: 999px;
 }
+
+@keyframes splash-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splash-bar {
+  0% {
+    transform: scaleX(0.15);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0.15);
+  }
+}
+
+.site-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  transition: opacity 500ms ease-out;
+}
+
+.site-splash.is-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-splash__grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.site-splash__glow {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gold) 12%, transparent);
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.site-splash__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.site-splash__brand {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  color: var(--gold-light);
+  animation: splash-rise 0.7s ease-out;
+}
+
+.site-splash__mark {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  background: white;
+  color: var(--navy);
+  padding: 0.3rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  animation: splash-rise 0.7s ease-out 0.1s both;
+}
+
+.site-splash__tagline {
+  margin: 1.5rem 0 0;
+  max-width: 18rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  animation: splash-rise 0.7s ease-out 0.2s both;
+}
+
+.site-splash__bar {
+  margin-top: 2.5rem;
+  height: 2px;
+  width: 4rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.site-splash__bar-fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  background: var(--gold);
+  animation: splash-bar 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-splash__brand,
+  .site-splash__mark,
+  .site-splash__tagline,
+  .site-splash__bar-fill {
+    animation: none !important;
+  }
+}

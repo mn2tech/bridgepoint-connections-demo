@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import { company } from "@/lib/company";
+import { SplashMarkup } from "@/components/SplashMarkup";
+import { SplashController } from "@/components/SplashController";
 import "./globals.css";
 
 const display = Libre_Baskerville({
@@ -67,6 +69,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
       <body className="min-h-full bg-paper font-sans text-ink antialiased">
+        <SplashMarkup />
+        <SplashController />
         {children}
       </body>
     </html>
