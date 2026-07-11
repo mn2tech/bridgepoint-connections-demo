@@ -141,4 +141,4 @@ export const chatStarterQuestions = [
   "How can I get started?",
 ] as const;
 
-export const chatWelcomeMessage = `Hi! I'm the ${company.name} AI Assistant. I can help you learn about our services, answer common questions, and help you find the right next step. How can I help?`;
+export const chatWelcomeMessage = `Hi! I'm Phil, the ${company.name} assistant. I can help you learn about our services, answer common questions, and help you find the right next step. How can I help?`;

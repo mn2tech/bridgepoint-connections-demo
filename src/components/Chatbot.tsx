@@ -81,11 +81,11 @@ export function Chatbot() {
         <div
           className="mb-3 flex h-[min(34rem,70vh)] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-3xl border border-[var(--line)] bg-white shadow-[0_24px_80px_rgba(26,47,56,0.28)]"
           role="dialog"
-          aria-label="Bridgepoint AI Assistant"
+          aria-label="Ask Phil assistant"
         >
           <div className="flex items-center justify-between bg-navy px-4 py-3 text-white">
             <div>
-              <p className="text-sm font-semibold">Bridgepoint AI Assistant</p>
+              <p className="text-sm font-semibold">Ask Phil</p>
               <p className="text-xs text-white/65">Answers from verified site info</p>
             </div>
             <button
@@ -168,11 +168,11 @@ export function Chatbot() {
         onClick={() => setOpen((value) => !value)}
         className="ml-auto flex h-14 items-center gap-2 rounded-full bg-gold px-4 text-navy shadow-[0_12px_40px_rgba(196,163,90,0.45)] transition hover:bg-gold-light"
         aria-expanded={open}
-        aria-label={open ? "Close AI assistant" : "Open AI assistant"}
+        aria-label={open ? "Close Ask Phil" : "Open Ask Phil"}
       >
         {open ? <X size={20} /> : <MessageCircle size={20} />}
         <span className="pr-1 text-sm font-semibold">
-          {open ? "Close" : "Ask AI"}
+          {open ? "Close" : "Ask Phil"}
         </span>
       </button>
     </div>
